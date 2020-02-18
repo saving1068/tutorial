@@ -1,0 +1,10 @@
+<view class="warp">
+  <block wx:for='{{imageList}}' wx:key='index'>
+    <view class="item">
+      <view class="item-image"  >
+        <image mode="aspectFit"  data-path="{{item}}" bindtap="getImage" src="{{item}}"></image>
+      </view>
+    </view>
+  </block>
+</view>
+

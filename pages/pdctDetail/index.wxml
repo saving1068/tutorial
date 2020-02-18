@@ -1,0 +1,34 @@
+<!--pages/productDetail/index.wxml-->
+<view class="warp">
+  <view class="detail">
+  <view class="swiper">
+    <swiper indicatorDots autoplay
+        circular
+        indicator-active-color='#FFB911'
+        >
+        <swiper-item wx:for='{{detail.picUrl}}' wx:key='index'>
+        <view class='swiper-image' bindtap="bigImage" data-url='{{item}}'>
+          <image mode="aspectFit" src="{{item}}"></image>
+        </view>
+        
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="title">
+      <view class="model">编号:{{detail.modelNo}}</view>
+      <view class="type">{{detail.pdType}}</view>
+    </view>
+    <view class="text">详情</view>
+    <view class="detail">
+      <view>{{detail.name}}</view>
+      <view>{{detail.description}}</view>
+    </view>
+  </view>
+</view>
+<view class="bottom space-around">
+  <view class="bottom-item" bindtap="goToIndex">首页</view>
+  <view class="bottom-item" bindtap="back">返回</view>
+  <view class="bottom-item" style="width:50%">
+    <button open-type="share" type="primary">分享</button>
+  </view>
+</view>

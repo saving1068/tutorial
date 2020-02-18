@@ -1,0 +1,10 @@
+<!--pages/store/index.wxml-->
+<view class="warp">
+  <scroll-view scroll-y style="height:100%;">
+    <view class="image center" wx:for='{{imageList}}' wx:key='index'>
+      <image mode="aspectFit" bindtap="getImageList" data-picUrl='{{item.picUrl}}' src='{{item.picUrl}}'></image>
+    </view>
+  </scroll-view>
+
+</view>
+

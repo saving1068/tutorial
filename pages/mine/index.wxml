@@ -1,0 +1,41 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="content">
+  <view class='top' bindtap="bigImage">
+    <image src="{{detail.picUrl}}"></image>
+  </view>
+  <view class='phoneBox'>
+      <view class='title'>{{detail.name}}</view>
+      <view class='addressBox' >
+        <view class="left" bindtap="openMap">
+          <view class='addressIcon' bindtap="navigation">
+            <image src="../../images/us_icon_location@2x.png"></image>
+          </view>
+          <view class="text">{{detail.address}}</view>
+        </view>
+        <view class="phoneIcon" bindtap="phoneCall">
+          <image src="../../images/us_icon_phone@2x.png"></image>
+        </view>
+      </view>
+    <!-- <view class="textContent">软装饰就是可以随意移动的装饰品，这些装饰品包括布艺、挂画、植栽等等。但如何放置也有些讲究，否则会适得其反。例如植物的摆放，芦荟、      室内种植。仙人掌对居住在寺庙、医院附近的人来说是较好的选择。所以软装饰虽随意性较大，但如果能适当参考设计师的建议效果会更好。</view>
+    <view class="imgBox">
+        <image></image>
+    </view> -->
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+  </view>
+
+<!-- <view class="item">
+  <view class="title">
+    <view class="mid"><text>服务范围</text>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view class="text">软装饰就是可以随意移动的装饰品，这些装饰品包括布艺、挂画、植栽等等。但如何放置也有些讲究，否则会适得其反。例如植物的摆放，芦荟、月季、万         年    人掌对居住在寺庙、医院附近的人来说是较好的选择。所以软装饰虽随意性较大，但如果能适当参考设计师的建议效果会更好。</view>
+  </view> -->
+</view>
+<view class="popup-box" wx:if="{{showPopup}}" bindtap="cancel">
+  <view class="popup">
+    <view class="popup-item phone-number" catchtap="">{{detail.phone}}</view>
+    <view class="popup-item confirm" bindtap="call">呼叫</view>
+    <view class="popup-item cancel" bindtap="cancel">取消</view>
+  </view>
+</view>

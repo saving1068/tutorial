@@ -1,0 +1,33 @@
+/* pages/share/index.wxss */
+.warp{
+  box-sizing: border-box;
+  padding: 20rpx 20rpx 100rpx
+}
+input{
+  font-size: 30rpx;
+  border:0.04rpx solid #FFB911;
+  border-radius: 10rpx;
+}
+.item{
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.input{
+  flex: 1;
+  padding:0 20rpx; 
+  height: 100%
+}
+.model{
+  padding: 10rpx 0;
+}
+.share{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+}

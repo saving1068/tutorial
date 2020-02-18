@@ -1,0 +1,52 @@
+/* pages/productDetail/index.wxss */
+.warp{
+  padding:0 20rpx;
+  padding-bottom: 100rpx;
+}
+.swiper{
+  width: 100%;
+  height: 350rpx;
+}
+.swiper swiper{
+  width: 100%;
+  height: 100%;
+}
+.swiper-image{
+   width: 100%;
+   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detail{
+  width: 100%;
+}
+.image{
+  width: 100%;
+  height: 400rpx;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:20rpx 0;
+  font-size: 30rpx;
+}
+.bottom{
+  width: 100%;
+  height: 100rpx;
+  font-size: 30rpx;
+  position: fixed;
+  bottom: 0;
+}
+.bottom-item{
+  width: 25%;
+  text-align: center;
+}
+.bottom-item button{
+  width: 100%;
+}
+.text{
+  text-align: center;
+  padding: 10rpx 0;
+}

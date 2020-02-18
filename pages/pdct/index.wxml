@@ -1,0 +1,65 @@
+<view class="container">
+    <view class="nav">
+        <scroll-view
+            style="width: auto;overflow:hidden;"
+            scroll-x
+        >   
+        <view>
+          <view class="scroll-view-item{{index == navCurrent ? ' active' : ''}}" wx:for="{{navBar}}" wx:key="index" data-index="{{index}}" data-type="{{item.id}}" bindtap="navChange">{{item.typeName}}</view>
+        </view>  
+         <view class='seach'>
+          <input placeholder='请输入关键字查找' confirm-type='search' bindinput="search"  placeholder-class='place'></input>
+          <icon type='search' bindtap="searchALL"  size="30" color='#FFB911'></icon>
+        </view>   
+        </scroll-view>
+    </view>
+    <view class="no-data" wx:if="{{noData}}">暂无数据</view>
+    <view class="box-container">
+      <view class="box" wx:for="{{list}}" wx:key="id" >
+        <view class='center' bindtap='getImage' data-url='{{item.picUrl[0]}}'>
+          <image class="img" mode="aspectFit"   src="{{item.picUrl[0]}}"/>
+        </view>
+          <view class="title">
+            <view style="flex:1;font-size:32rpx">
+              <view>名称:{{item.name}}</view>
+              <view>编号:{{item.modelNo}}</view>
+           </view>
+            <view class='addIcon center' wx:if='{{ifSelect}}' bindtap="pushShare"  data-item='{{item}}'>
+              <image mode="aspectFit" src='../../images/add.png'></image>
+            </view>
+            <button type='primary' size='mini' data-id="{{item.id}}" bindtap="jump">进入详情</button>
+          </view>
+           <view class="detail">
+            
+            <!-- <text class="spec" wx:for="{{item.spec}}" wx:key="{{index}}">{{item}}</text> -->
+              
+          </view> 
+      </view>
+    </view>
+    <view class='selec center' bindtap="select">
+       {{ifSelect?'取消':'选款'}}
+    </view>
+    <view class='selectWarp'  wx:if='{{ifSelect}}'>
+     <scroll-view 
+            style="width: auto;overflow:hidden;flex:1"
+            scroll-x
+        >   
+        <view class='selectList'>
+        <view class="selectItem center" wx:for='{{selectList}}' wx:key='index'>
+          <view class="reduce">
+            <image src="../../images/jian.png" bindtap="reduce" data-item="item"></image>
+          </view>
+          <image  src="{{item.picUrl[0]}}"></image>
+        </view>
+      </view>
+        </scroll-view>
+      
+      <view class='selcetNum '>
+       
+        <view class='shareBtn'>
+          <button size='mini' bindtap="share" type="primary">提交({{selectList.length}})</button>
+        </view>
+      </view>
+    </view>
+</view>
+<view class="no-data"  wx:key="index" wx:if="{{list.length==0}}">没有更多数据了</view>

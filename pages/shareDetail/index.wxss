@@ -1,0 +1,24 @@
+/* pages/shareDetail/index.wxss */
+.warp{
+  padding-bottom: 100rpx;
+}
+.list{
+  padding: 0 20rpx;
+}
+.item{
+  margin-top: 20rpx;
+  width: 100%;
+}
+.image{
+  width: 100%;
+  height: 300rpx;
+}
+.detail{
+  padding: 10rpx 0;
+}
+.share{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+}

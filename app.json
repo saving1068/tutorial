@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/pdct/index",
+    "pages/profile/index",
+    "pages/picture/index",
+    "pages/mine/index",
+    "pages/store/index",
+    "pages/team/index",
+    "pages/pdctDetail/index",
+    "pages/share/index",
+    "pages/shareDetail/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "龙景托辅园",
+    "navigationBarTextStyle": "black",
+    "pageOrientation": "auto"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#FFB911",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/index.png",
+        "selectedIconPath": "./images/index-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "托辅简介",
+        "iconPath": "./images/profile.png",
+        "selectedIconPath": "./images/profile-active.png"
+      },
+      {
+        "pagePath": "pages/pdct/index",
+        "text": "服务分类",
+        "iconPath": "./images/product.png",
+        "selectedIconPath": "./images/product-active.png"
+      },
+      {
+        "pagePath": "pages/picture/index",
+        "text": "画册",
+        "iconPath": "./images/picture.png",
+        "selectedIconPath": "./images/picture-active.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "联系我们",
+        "iconPath": "./images/mine.png",
+        "selectedIconPath": "./images/mine-active.png"
+      }
+    ]
+  },
+  "subpackages": [],
+  "networkTimeout": {
+    "request": 30000
+  },
+  "debug": true,
+  "resizable": true,
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

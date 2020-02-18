@@ -1,0 +1,14 @@
+/* pages/picture/index.wxss */
+.warp{
+  padding: 0 20rpx;
+}
+
+.item{
+  margin-top: 20rpx;
+  text-align: center;
+}
+.item-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500rpx;}
