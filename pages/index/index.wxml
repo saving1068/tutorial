@@ -24,7 +24,7 @@
   </view> -->
   <view class="prodict">
     <view class="prodict-item" wx:for='{{series}}' data-type="{{item.id}}" bindtap="goToPdct" wx:key='index'>
-      <view class="name">{{item.typeName}}</view>
+      <view class="name center" >{{item.typeName}}</view>
       <view class="item-image">
         <image  src="{{item.typePic}}"></image>
       </view>

@@ -28,7 +28,8 @@ Page({
     ],
     page:1,
     total:0,
-    keyWord:''
+    keyWord:'',
+    toView:''
   },
 
   /**
@@ -118,14 +119,18 @@ Page({
     api.getSeries().then((res)=>{
       let navBar = [...this.data.navBar];
       res.data.forEach((item)=>{
+        item.tid = `A${item.id}`;
         navBar.push(item)
       })
+      console.log(navBar)
       let index = navBar.findIndex((item) => item.id == this.data.ncType);
       index = index != -1 ? index:0;
 
       this.setData({
+        
         navBar: navBar,
-        navCurrent:index
+        navCurrent:index,
+        toView: `A${this.data.ncType}` ,
       })
     })
   },

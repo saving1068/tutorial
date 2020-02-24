@@ -1,11 +1,14 @@
 /* pages/productDetail/index.wxss */
 .warp{
-  padding:0 20rpx;
+
   padding-bottom: 100rpx;
 }
 .swiper{
   width: 100%;
-  height: 350rpx;
+  background: rgb(240, 240, 240);
+  padding: 5rpx 20rpx; 
+  box-sizing: border-box;
+  /* height: 350rpx; */
 }
 .swiper swiper{
   width: 100%;
@@ -17,20 +20,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin:20rpx 0; 
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.description{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(240, 240, 240);
+  padding:20rpx 0;
+}
+.model{
+  width: 100%
 }
 .detail{
   width: 100%;
+  color: rgb(99, 99, 99);
+  padding: 5px 20rpx;
+  box-sizing: border-box;
+  
 }
 .image{
   width: 100%;
   height: 400rpx;
+  
 }
 .title{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  /* align-items: center; */
   padding:20rpx 0;
   font-size: 30rpx;
+  color: #000;
+  /* font-weight: 600; */
 }
 .bottom{
   width: 100%;
@@ -38,6 +63,7 @@
   font-size: 30rpx;
   position: fixed;
   bottom: 0;
+  background: #fff;
 }
 .bottom-item{
   width: 25%;

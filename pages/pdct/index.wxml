@@ -3,31 +3,37 @@
         <scroll-view
             style="width: auto;overflow:hidden;"
             scroll-x
+            scroll-into-view="{{toView}}"
+            scroll-with-animation
         >   
         <view>
-          <view class="scroll-view-item{{index == navCurrent ? ' active' : ''}}" wx:for="{{navBar}}" wx:key="index" data-index="{{index}}" data-type="{{item.id}}" bindtap="navChange">{{item.typeName}}</view>
+          <view id='{{item.tid}}' class="scroll-view-item{{index == navCurrent ? ' active' : ''}}" wx:for="{{navBar}}" wx:key="index" data-index="{{index}}" data-type="{{item.id}}" bindtap="navChange">{{item.typeName}}</view>
         </view>  
-         <view class='seach'>
+        
+        </scroll-view>
+         
+    </view>
+    <view class='seach'>
           <input placeholder='请输入关键字查找' confirm-type='search' bindinput="search"  placeholder-class='place'></input>
           <icon type='search' bindtap="searchALL"  size="30" color='#FFB911'></icon>
         </view>   
-        </scroll-view>
-    </view>
     <view class="no-data" wx:if="{{noData}}">暂无数据</view>
     <view class="box-container">
       <view class="box" wx:for="{{list}}" wx:key="id" >
-        <view class='center' bindtap='getImage' data-url='{{item.picUrl[0]}}'>
-          <image class="img" mode="aspectFit"   src="{{item.picUrl[0]}}"/>
+        <view class='center imgContent' bindtap='getImage' data-url='{{item.picUrl[0]}}'>
+          <image class="img"  src="{{item.picUrl[0]}}"/>
         </view>
           <view class="title">
-            <view style="flex:1;font-size:32rpx">
-              <view>名称:{{item.name}}</view>
-              <view>编号:{{item.modelNo}}</view>
+            <view class="right">
+              <view class="rightItem">名称：{{item.name}}</view>
+              <view class="rightItem">编号：{{item.modelNo}}</view>
+              <view class="rightItem">类型：{{item.pdTypeName}}</view>
+              <button type='primary' size='mini' data-id="{{item.id}}" bindtap="jump">进入详情</button>
+              <view class='addIcon center' wx:if='{{ifSelect}}' bindtap="pushShare"  data-item='{{item}}'>
+                <image mode="aspectFit" src='../../images/add.png'></image>
+              </view>
            </view>
-            <view class='addIcon center' wx:if='{{ifSelect}}' bindtap="pushShare"  data-item='{{item}}'>
-              <image mode="aspectFit" src='../../images/add.png'></image>
-            </view>
-            <button type='primary' size='mini' data-id="{{item.id}}" bindtap="jump">进入详情</button>
+            
           </view>
            <view class="detail">
             
