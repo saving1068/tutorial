@@ -59,10 +59,29 @@ Page({
     }
     api.furnitureDetail(obj).then((res)=>{
       console.log(res,1111)
-      res.data.pdType = util.changeString(res.data.pdType, this.data.nav)
+      // res.data.picUrl.map((item)=>{
+      //   let obj = {
+      //     url:item
+      //   }
+      //   wx.getImageInfo({
+      //     src:item,
+      //     success:((e)=>{
+      //       console.log(e)
+           
+      //       obj.width = e.width;
+      //       obj.height = e.height;
+      //       item = obj;
+            
+      //     })
+      //   })
+      // })
+      res.data.pdType = util.changeString(res.data.pdType, this.data.nav);
+
+      console.log(res.data, 'data')
       this.setData({
-        detail:res.data
+        detail: res.data
       })
+      
     })
   },
   /**
@@ -107,7 +126,7 @@ Page({
     let shareInfo = {
       title: this.data.detail.pdType +'型号'+ this.data.detail.modelNo,
       path: '../pdctDetail/index?id=' + this.data.id,
-      imageUrl: this.data.detail.picUrl
+      imageUrl: this.data.detail.picUrl[0]
     }
     return shareInfo
   }
